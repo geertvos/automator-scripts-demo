@@ -1,5 +1,6 @@
 var init = function() {
     log.info("Loaded demo plugin.");
+    slack.send("#dev-monitoring","Hi this is Automator! From now on I am running on Automator to help automate your k8s cluster.");
 }
 
 var run = function() {
@@ -12,5 +13,5 @@ var run = function() {
 }
 
 var destroy = function() {
-    log.info("Unloaded demo plugin.");
+    slack.send("#dev-monitoring","Goodbye. I am unloaded and will no longer run on your cluster.");
 }
