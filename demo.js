@@ -1,4 +1,7 @@
 var init = function() {
+    plugins.load("log");
+    plugins.load("k8s");
+    plugins.load("slack");
     log.info("Loaded demo plugin.");
     slack.send("#dev-monitoring","Hi this is Automator! From now on I am running on Automator to help automate your k8s cluster.");
 }
