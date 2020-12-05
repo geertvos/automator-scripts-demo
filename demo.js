@@ -11,5 +11,5 @@ var run = function() {
       print(item.getMetadata().getName());
     }
     
-    slack.send("#dev-monitoring","Hi this is Automator! You now have "+list.getItems().size()+" pods running. Modified.");
+    slack.send("#dev-monitoring","Hi this is Automator! You now have "+list.getItems().size()+" pods running.");
 }
