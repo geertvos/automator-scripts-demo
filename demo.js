@@ -1,5 +1,5 @@
 var init = function() {
-    print("Loaded demo plugin");
+    log.info("Loaded demo plugin");
 }
 
 var run = function() {
