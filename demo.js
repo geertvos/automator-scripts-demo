@@ -3,7 +3,7 @@ var init = function() {
     plugins.load("k8s");
     plugins.load("slack");
     log.info("Loaded demo plugin.");
-    slack.send("#dev-monitoring","Hi this is Automator! From now on I am running on Automator to help automate your k8s cluster.");
+    slack.send("#dev-monitoring","Hi this is Automator! From now on I am running all your Automator scripts to help automate your k8s cluster.");
 }
 
 var run = function() {
@@ -12,7 +12,7 @@ var run = function() {
       var item = list.getItems().get(i);
       log.info(item.getMetadata().getName());
     }
-    //slack.send("#dev-monitoring","Hi this is Automator! You now have "+list.getItems().size()+" pods running. Test Update!");
+    slack.send("#dev-monitoring","Hi this is Automator! You now have "+list.getItems().size()+" pods running. Test Update!");
 }
 
 var destroy = function() {
