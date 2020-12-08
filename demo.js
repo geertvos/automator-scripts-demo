@@ -2,7 +2,7 @@ var init = function() {
     plugins.load("log");
     plugins.load("k8s");
     plugins.load("slack");
-    plugins.load("rabbiqmq");
+    plugins.load("rabbitmq");
     log.info("Loaded demo plugin.");
     slack.send("#dev-monitoring","Hi this is Automator! From now on I am running all your Automator scripts to help automate your k8s cluster.");
 }
