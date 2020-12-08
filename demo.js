@@ -17,7 +17,7 @@ var run = function() {
     
     nodes = rabbitmq.getNodes();
     for(i=0; i < nodes.size(); i++) {
-        var node = list.get(i);
+        var node = nodes.get(i);
         log.info("RabbitMQ Node: "+node.getName());
     }
 }
