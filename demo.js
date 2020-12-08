@@ -19,6 +19,7 @@ var run = function() {
     for(i=0; i < nodes.size(); i++) {
         var node = nodes.get(i);
         log.info("RabbitMQ Node: "+node.getName()+" memory used: "+node.getMemoryUsed());
+        slack.send("#dev-monitoring","Your RabbitMQ node "+node.getName()+" is using this much memory: "+node.getMemoryUsed());
     }
 }
 
