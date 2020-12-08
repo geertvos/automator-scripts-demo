@@ -2,6 +2,7 @@ var init = function() {
     plugins.load("log");
     plugins.load("k8s");
     plugins.load("slack");
+    plugins.load("rabbiqmq");
     log.info("Loaded demo plugin.");
     slack.send("#dev-monitoring","Hi this is Automator! From now on I am running all your Automator scripts to help automate your k8s cluster.");
 }
@@ -13,6 +14,12 @@ var run = function() {
       log.info(item.getMetadata().getName());
     }
     slack.send("#dev-monitoring","Hi this is Automator! You now have "+list.getItems().size()+" pods running. Test Update!");
+    
+    nodes = rabbitmq.getNodes();
+    for(i=0; i < nodes.size(); i++) {
+        var node = list.get(i);
+        log.info("RabbitMQ Node: "+node.getName());
+    }
 }
 
 var destroy = function() {
