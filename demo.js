@@ -18,7 +18,7 @@ var run = function() {
     nodes = rabbitmq.getNodes();
     for(i=0; i < nodes.size(); i++) {
         var node = nodes.get(i);
-        log.info("RabbitMQ Node: "+node.getName());
+        log.info("RabbitMQ Node: "+node.getName()+" memory used: "+node.getMemoryUsed());
     }
 }
 
