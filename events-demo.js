@@ -2,7 +2,7 @@ var init = function() {
     plugins.load("log");
     plugins.load("events");
     log.info("Loaded event demo.");
-    events.register(this, "scripts.executed");
+    eventbus.register(this, "scripts.executed");
 }
 
 var onReceiveEvent = function(event) {
