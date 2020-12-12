@@ -6,7 +6,7 @@ var init = function() {
     plugins.load("log");
     plugins.load("eventbus");
     log.info("Loaded event demo.");
-    eventbus.register(onReceiveEvent, "scripts.executed");
+    eventbus.register(onReceiveEvent, "scripts");
 }
 
 var run = function() {
