@@ -8,12 +8,12 @@ var init = function() {
 }
 
 var run = function() {
-    list = k8s.listPodForAllNamespaces(null, null, null, null, null, null, null, null, null);
-    for (i=0; i< list.getItems().size(); i++) {
-      var item = list.getItems().get(i);
-      log.info(item.getMetadata().getName());
+    services = k8s.services().list();
+    for (i=0; i< services.getItems().size(); i++) {
+      service = services.getItems().get(i);
+      log.info(service.getMetadata().getName());
     }
-    slack.send("#dev-monitoring","Hi this is Automator! You now have "+list.getItems().size()+" pods running.");
+    slack.send("#dev-monitoring","Hi this is Automator! You now have "+services.getItems().size()+" services running.");
     
     nodes = rabbitmq.getNodes();
     for(i=0; i < nodes.size(); i++) {
